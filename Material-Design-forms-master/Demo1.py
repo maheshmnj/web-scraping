@@ -22,8 +22,8 @@ soap=BeautifulSoup(url.text,'html.parser')
 r=0
 link1="http://www.srtmun.ac.in"
 for link in soap.find_all('a'):
-	s=link.get('href')
-	l=str(s)
+	links=link.get('href') #List of links
+	l=str(links) 
 	l1=l.split("/")
 	for k in l1:
 		k1=k

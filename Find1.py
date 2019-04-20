@@ -3,7 +3,7 @@ import pymysql
 
 a=re.compile("\n[A-Z0-9/\s.()]+\n");
 
-with open("NameList.txt.txt") as f:
+with open("NameList.txt") as f:
 	total=f.read()
 	x=re.findall(a,total)[0:];
 	#print(x)

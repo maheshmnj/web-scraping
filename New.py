@@ -7,14 +7,216 @@ def manual_result():
 	branch=input("Enter branch and class: eg BECSE ")
 	branch.upper();
 	# branch+=".txt"
-
 	your_result = result(branch,seatno)
 	print("your_result is :",your_result)
 
 
+# def result1(seatno,branch):
+# 	your_result1=""
+# 	branch+=".txt"
+# 	with open(branch,"rt") as P:
+# 		data=P.read()
+# 	L=data.split(' ')
+# 	j1=0;j2=0;j3=0;
+# 	cgpa=[]
+# 	for i in range(len(L)):
+# 		if(L[i]=='(CGPA)\n' or L[i] == 'CGPA'):
+# 			j1=i
+# 			cgpa.append(j1)
+# 	L1=[];L2=[];
+# 	for i in range(1,len(cgpa)):
+# 		while(cgpa[i-1]<cgpa[i]):
+# 			L1.append(L[cgpa[i-1]])
+# 			cgpa[i-1]=cgpa[i-1]+1;
+# 	# print(L1)
+# 	# print("")
+# 	# CGPA BACKLOG
+# 	while(cgpa[1]<len(L)):
+# 		L2.append(L[cgpa[1]])
+# 		cgpa[1]=cgpa[1]+1;
+# 	# print(L2)
+# 	j1=0;j2=0;j3=0;j4=0;j5=0;
+# 	for i in range(len(L1)):
+# 		if(L1[i]=="PASS"):
+# 			j1=i;
+# 		if(L1[i]=="OV"):
+# 			j2=i;
+# 		if(L1[i]=="(EC)"):
+# 			j3=i;
+# 		if(L1[i]=="WPC"):
+# 			j4=i
+# 		if(L1[i]=="DETAINED"):
+# 			j5=i
+
+# 	nestedList=[]
+
+# 	R1=[];R2=[];R3=[];R4=[];R5=[];
+# 	while(j1<j2):
+# 		R1.append(L1[j1])
+# 		j1=j1+1
+
+# 	nestedList.append(R1)   
+
+# 	while(j2<j3):
+# 		R2.append(L1[j2])
+# 		j2=j2+1
+# 	nestedList.append(R2)
+# 	while(j3<j4):
+# 		R3.append(L1[j3])
+# 		j3=j3+1
+# 	nestedList.append(R3)
+# 	while(j4<j5):
+# 		R4.append(L1[j4])
+# 		j4=j4+1
+# 	nestedList.append(R4)
+# 	while(j5<len(L1)):
+# 		R5.append(L1[j5])
+# 		j5=j5+1
+# 	nestedList.append(R5)
+# 	# print(R5)
+# 	listname=-1;
+# 	for list1 in range(len(nestedList)):
+# 		for i in nestedList[list1]:
+# 			s=i.split('\n\n')
+# 			for j in s:
+# 				if(j==seatno):
+# 					listname=list1;
+# 	if(listname==-1):
+# 		pass
+# 		# print("NOT IN REGULAR,SEARCHING IN ANOTHER ");
+# 	elif(listname==0):
+# 		your_result1 = "CLEARED"
+# 		# print('CLEARED')
+# 	elif(listname==1):
+# 		your_result1 = "OV"
+# 		# print('NOT CLEARED')
+# 	elif(listname==2):
+# 		your_result1 = "HELD EC"
+# 		# print('HELD')
+# 	elif(listname==3):
+# 		your_result1 ="WPC"
+# 		# print('WPC')
+# 	elif(listname==4):
+# 		your_result1="DETAINED"
+# 	k1=0;k2=0;k3=0;k4=0;k5=0;k6=0;k7=0;
+# 	for i in range(len(L2)):
+# 		if(L2[i]=="DECLEARED" and L2[i+1]=="PASS"):
+# 			k1=i;
+# 			# '''print(L2[k1])
+# 			# print("")'''
+# 		if(L2[i]=="KEEP" and L2[i+1]=="TERM"):
+# 			k2=i;
+# 			# '''print(L2[k2])
+# 			# print("")'''
+# 		if(L2[i]=="(RHR)"):
+# 			k3=i;
+# 			# '''print(L2[k3])
+# 			# print("")'''
+# 		if(L2[i]=="OV"):
+# 			k4=i
+# 			# '''print(L2[k4])
+# 			# print("")'''
+# 		if(L2[i]=="(EC)"):
+# 			k5=i;
+# 		if(L2[i]=="WPC"):
+# 			k6=i
+# 			# '''print(L2[k6])
+# 			# print("")'''
+# 		if(L2[i]=="DETAINED"):
+# 			k7=i;
+# 	# print(k0)
+# 			# '''print(L2[k0])
+# 			# print("")'''
+
+# 	P1=[];P2=[];P3=[];P4=[];P5=[];P6=[];P7=[];
+# 	nestedList2=[]
+# 	while(k1<k2):
+# 		P1.append(L2[k1])
+# 		k1=k1+1
+# 	# print(P1)
+# 	# print("")
+# 	nestedList2.append(P1)
+# 	while(k2<k3):
+# 		P2.append(L2[k2])
+# 		k2=k2+1
+# 	# '''print(P2)
+# 	# print("")'''
+# 	nestedList2.append(P2)
+# 	while(k3<k4):
+# 		P3.append(L2[k3])
+# 		k3=k3+1
+# 	# '''print(P3)
+# 	# print("")'''
+# 	nestedList2.append(P3)
+# 	while(k4<k5):
+# 		P4.append(L2[k4])
+# 		k4=k4+1
+# 	# '''print(P4)
+# 	# print("")'''
+# 	nestedList2.append(P4)
+# 	while(k5<k6):
+# 		P5.append(L2[k5])
+# 		k5=k5+1
+# 	# '''print(P5)
+# 	# print("")'''
+# 	nestedList2.append(P5)
+# 	while(k6<k7):
+# 		P6.append(L2[k6])
+# 		k6=k6+1
+# 	# '''print(P6)
+# 	# print("")'''
+# 	nestedList2.append(P6)
+# 	while(k7<len(L2)):
+# 		P7.append(L2[k7])
+# 		k7=k7+1
+# 	nestedList2.append(P7)
+# 	print(P7)
+# 	print("")
+	
+# 	listname1=-1
+# 	for list1 in range(len(nestedList2)):
+# 		for i in nestedList2[list1]:
+# 			s=i.split('\n\n')
+# 			for j in s:
+# 				if(j==seatno):
+# 					listname1=list1;
+
+# 	if(listname1==0):
+# 		your_result1 ="PASS" 
+# 		# print("PASS")
+# 	elif(listname1==1):
+# 		your_result1 = "ATKT" 
+# 		# print("ATKT")
+# 	elif(listname1==2):
+# 		your_result1 = "RHR" 
+# 		# print("F-ATKT")
+# 	elif(listname1==3):
+# 		your_result1 = "OV" 
+# 		# print("ABSENT")
+# 	elif(listname1==4):
+# 		your_result1 = "EC" 
+# 		# print("FAIL")
+# 	elif(listname1==5):
+# 		your_result1 = "WPC" 
+# 		# print("RHR")
+# 	elif(listname1==6):
+# 		your_result1 = "DETAINED"      
+# 		#print("DETAINED")
+# 	return your_result1;
+
+
+
 def result(branch,seatno):
 	your_result=""
+	seatno.upper()
+	branch.upper()
+	if(branch=="TEMECH"):
+		your_result=result1(seatno,branch);
+		return your_result;
 	branch+=".txt"
+	
+	print(branch)
+
 	with open(branch,"rt") as P:
 		data=P.read()
 	L=data.split(' ')
@@ -114,7 +316,7 @@ def result(branch,seatno):
 	elif(listname==4):
 		your_result="DETAINED"
 		# print('DETAINED')
-
+	print(your_result)
 	#searching in  CGPA BACKLOG
 	k1=0;k2=0;k3=0;k4=0;k5=0;k6=0;k7=0;k8=0;k9=0;k0=0;P9=[];P0=[];
 	for i in range(len(L2)):
@@ -259,7 +461,9 @@ def result(branch,seatno):
 	elif(listname1==9):
 		your_result = "DETAINED"        
 		# print("DETAINED")
+	print(your_result)	
 	return your_result
+
 
 # mydb = pymysql.connect(
 #   host="localhost",
@@ -289,10 +493,10 @@ def result(branch,seatno):
 # 	seatno=resultt[0]
 # 	branch = resultt[1] #CSE or EC/ECT...
 # 	clss = str.join("",resultt[-1].split(".")); #S.E.-->SE
-# 	if(branch == 'INFORMATION' and clss=="SE"):
+# 	if(branch=='INFORMATION' and clss=='SE'):
 # 		# ourresult = result(clss + 'INFORMATION',resultt[0])	
-# 		ourresult = result(clss + 'CSE',resultt[0])
-# 		query = 'update data set Result=%s where seat_no=%s'
+# 		ourresult = result(clss+'CSE',seatno)
+# 		query = 'update data set result=%s where seat_no=%s'
 # 		value = (ourresult,seatno)
 # 		resp = cur.execute(query,value)
 # 		mydb.commit()
@@ -312,7 +516,6 @@ def result(branch,seatno):
 # 		mydb.commit()
 # 	i+=1
 manual_result()
-print('operation Success')	
 
 
 
