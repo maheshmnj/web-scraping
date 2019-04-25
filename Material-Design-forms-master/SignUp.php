@@ -9,92 +9,104 @@
   <title>User Registration</title>
   <?php 
   require 'connect.php';
-  function Analysis($class){
-      require 'connect.php';
-  $total_se="select count(*) as total from data where  class='$class'";
-  $pass="select count(*)as pass  from data where  class='$class' and result='PASS' or result='CLEARED'";
-  $rhr="select count(*)as rhr from data  where  class='$class' and result='RHR'";
-  $atkt="select count(*)as atkt from data  where  class='$class' and result='ATKT'";
-  $f_atkt="select count(*)as f_atkt from data  where  class='$class' and result='F-ATKT'";
-  $absent="select count(*)as absent from data  where  class='$class' and result='ABSENT'";
-  $fail="select count(*)as fail from data  where  class='$class' and result='FAIL'";
-  $detained="select count(*)as detained from data  where  class='$class' and result='DETAINED'";
-  $notcleared="select count(*)as notcleared from data  where  class='$class' and result='NOT CLEARED'";
 
-  $res=mysqli_query($conn,$total_se);
-  $row_total=mysqli_fetch_assoc($res); 
-  $total= $row_total['total'];
+  function Analysis($class){
+    require 'connect.php';
+    $total_se="select count(*) as total from data where  class='$class'";
+    $pass="select count(*)as pass  from data where  class='$class' and result='PASS' or result='CLEARED'";
+    $rhr="select count(*)as rhr from data  where  class='$class' and result='RHR'";
+    $atkt="select count(*)as atkt from data  where  class='$class' and result='ATKT'";
+    $f_atkt="select count(*)as f_atkt from data  where  class='$class' and result='F-ATKT'";
+    $absent="select count(*)as absent from data  where  class='$class' and result='ABSENT'";
+    $fail="select count(*)as fail from data  where  class='$class' and result='FAIL'";
+    $detained="select count(*)as detained from data  where  class='$class' and result='DETAINED'";
+    $notcleared="select count(*)as notcleared from data  where  class='$class' and result='NOT CLEARED'";
+
+    $res=mysqli_query($conn,$total_se);
+    $row_total=mysqli_fetch_assoc($res); 
+    $total= $row_total['total'];
   // print_r($total);
   // echo "<Br>";
-  $res1=mysqli_query($conn,$pass);
-  $row_pass=mysqli_fetch_assoc($res1);
-  $pass1=$row_pass['pass'];
+    $res1=mysqli_query($conn,$pass);
+    $row_pass=mysqli_fetch_assoc($res1);
+    $pass1=$row_pass['pass'];
 // echo "\n";
 // echo $pass1;
-  $res2=mysqli_query($conn,$rhr);
-  $row_rhr=mysqli_fetch_assoc($res2);
-  $rhr1=$row_rhr['rhr'];
+    $res2=mysqli_query($conn,$rhr);
+    $row_rhr=mysqli_fetch_assoc($res2);
+    $rhr1=$row_rhr['rhr'];
 
 
 
-  $res3=mysqli_query($conn,$atkt);
-  $row_atkt=mysqli_fetch_assoc($res3);
-  $atkt1=$row_atkt['atkt'];
+    $res3=mysqli_query($conn,$atkt);
+    $row_atkt=mysqli_fetch_assoc($res3);
+    $atkt1=$row_atkt['atkt'];
 
-  $res4=mysqli_query($conn,$f_atkt);
-  $row_fatkt=mysqli_fetch_assoc($res4);
-  $fatkt1=$row_fatkt['f_atkt'];
+    $res4=mysqli_query($conn,$f_atkt);
+    $row_fatkt=mysqli_fetch_assoc($res4);
+    $fatkt1=$row_fatkt['f_atkt'];
 
-  $res5=mysqli_query($conn,$absent);
-  $row_absent=mysqli_fetch_assoc($res5);
-  $absent1=$row_absent['absent'];
-
-
-  $res6=mysqli_query($conn,$fail);
-  $row_fail=mysqli_fetch_assoc($res6);
-  $fail1=$row_fail['fail'];
+    $res5=mysqli_query($conn,$absent);
+    $row_absent=mysqli_fetch_assoc($res5);
+    $absent1=$row_absent['absent'];
 
 
-  $res7=mysqli_query($conn,$detained);
-  $row_detained=mysqli_fetch_assoc($res7);
-  $detained1=$row_detained['detained'];
+    $res6=mysqli_query($conn,$fail);
+    $row_fail=mysqli_fetch_assoc($res6);
+    $fail1=$row_fail['fail'];
 
-  $res8=mysqli_query($conn,$notcleared);
-  $row_notcleared=mysqli_fetch_assoc($res8);
-  $notcleared1=$row_notcleared['notcleared'];
 
-  $a=array($pass1,$rhr1,$atkt1,$fatkt1,$absent1,$fail1,$detained1,$notcleared1);
-  return $a;
-}
+    $res7=mysqli_query($conn,$detained);
+    $row_detained=mysqli_fetch_assoc($res7);
+    $detained1=$row_detained['detained'];
 
-$s='S.E.';
-$t='T.E.';
-$b='B.E.';
-$se=Analysis($s);
+    $res8=mysqli_query($conn,$notcleared);
+    $row_notcleared=mysqli_fetch_assoc($res8);
+    $notcleared1=$row_notcleared['notcleared'];
+
+    $a=array($pass1,$rhr1,$atkt1,$fatkt1,$absent1,$fail1,$detained1,$notcleared1);
+    return $a;
+  }
+
+  $s='S.E.';
+  $t='T.E.';
+  $b='B.E.';
+  $se=Analysis($s);
 // echo "<Br>";
 // print_r($se);
 
-$te=Analysis($t);
+  $te=Analysis($t);
 // echo "<Br>";
 // print_r($te);
-$be=Analysis($b);
+  $be=Analysis($b);
 // echo "<Br>";
 // print_r($be);
-?>
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="css/mdb.min.css" rel="stylesheet">
-<!-- Your custom styles (optional) -->
-<link href="css/style.css" rel="stylesheet">
+  ?>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
   <div class="container-fluid mb-5">
-
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: purple">
+        <div class="pl-auto ml-auto mr-auto" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                  <h2 class="text-light" style="text-align: center;">SRTMUN Results Notifer</h2>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>      
+    <div class="row mt-5 mb-5">
     <div class="card col-lg-6 col-md-10 col-sm-10 mt-5" style=" margin: auto auto; /* Added */
     float: none; border-radius: 20px /* Added */;">
     <div class="card-body">
@@ -135,7 +147,7 @@ $be=Analysis($b);
             <div class="form-group">
               <div class="col-8" style="left: 20%">
                 <select id="company" name="class" class="form-control">
-                  <option>SE</option>
+                  <option value="S.E.">SE</option>
                   <option>TE</option>
                   <option>BE</option>
                 </select> 
@@ -150,35 +162,43 @@ $be=Analysis($b);
       </form>
     </div>
   </div>
-  <h3 class="mt-5" style="text-align: center;">Statistics</h3>
-
+  <div class="col-lg-1">
+  </div>
+  <div class="card col-lg-4 col-md-8 col-sm-8 mt-5 pt-3 pb-5 pl-5 pr-5" style="height: 450px; margin: auto auto;">
+    <h2 style="text-align: center;">QuicK Result Search</h2>
+    <form action="postResultSearch.php" method="get">
+      <div class="md-form mt-5">
+        <input type="text" name="seatnosearch" class="form-control">
+        <label for="seatno">seatno</label> 
+      </div>
+      <div class="form-group">
+        <div class="col-8">
+          <select id="company" name="classsearch" class="form-control">
+            <option>SE</option>
+            <option>TE</option>
+            <option>BE</option>
+          </select> 
+        </div>
+      </div>
+      <div style="text-align: center;">
+        <button class="mt-5 btn btn-success btn-circle"
+        style=" word-wrap:break-word;border-radius: 25px;width:200px ">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div style="background-color: black; height: 1px;width: 100%"> </div>
+  <h3 style="text-align: center;line-height: 80px; vertical-align: middle;">Statistics</h3>
+  <div style="background-color: black; height: 1px;width: 100%"> </div>
   <div class="row">
     <div class="col-lg-4 col-md-12 col-sm-12 mb-5" id="piechart1" style="text-align: center;height: auto"></div>
     <div class="col-lg-4 col-md-12 col-sm-12 mb-5" id="piechart2" style="text-align: center;height: auto"></div>
     <div class="col-lg-4 col-md-12 col-sm-12 mb-5" id="piechart3" style="text-align: center;height: auto"></div>
   </div>
- 
-
- <!-- <div class="col-lg-12 col-md-10 col-sm-12 pt-3 pb-3" style="height: auto;">
-    <p>SE</p>
-    <div class="container">
-      <div class="skills css">
-        80%
-      </div>
-    </div>
-
-    <p>TE</p>
-    <div class="container">
-      <div class="skills js">65%</div>
-    </div>
-
-    <p>BE</p>
-    <div class="container">
-      <div class="skills php">60%</div>
-    </div>
-  </div>
 </div>
-<!-- SCRIPTS -->
+
+ 
+<!--SCRIPTS -->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 // Load google charts

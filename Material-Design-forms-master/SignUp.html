@@ -19,96 +19,122 @@
 
 <body>
 
-  <div class="container-fluid mb-5">
+<h1 class="text-primary mt-3" style="text-align: center;"> SRTMUN Results Notifier</h1>
+<div class="container mb-5">
+  <div class="row">
+    <div class="card col-lg-6 col-md-10 col-sm-10 mt-5 pt-3" style="margin: auto auto;">
+      <div class="card-body">
+        <h2 style="text-align: center;" >Get Notified for Future Results </h2>
 
-    <div class="card col-lg-6 col-md-10 col-sm-10 mt-5" style=" margin: auto auto; /* Added */
-    float: none; border-radius: 20px /* Added */;">
-    <div class="card-body">
-      <h2 class="text-primary" style="text-align: center;" >SRTMUN Results Notifier </h2>
+        <form action="Conn.php" method="get">
 
-      <form action="Conn.php" method="get">
-
-        <div class="row">
-          <div class="col-lg-6 col-md-12 col-sm-12 ">
-            <div class="md-form mt-5">
-              <input type="text" name="first" class="form-control">
-              <label for="name">Name</label> 
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12">
-            <div class="md-form mt-lg-5 mt-1">
-              <input type="text" name="branch" class="form-control">
-              <label for="branch">Branch</label> 
-            </div>
-          </div>
-        </div>  
-        <div class="md-form mt-0">
-          <input type="email" id="email" class="form-control" name="email" autocomplete="off" required/>
-          <label for="email">Email</label>           
-        </div>
-        <div class="md-form mt-0">
-          <input type="text" id="seat" class="form-control" name="seatno" autocomplete="off" required/>
-          <label for="seat">Seat Number </label>           
-        </div>
-
-        <div class="row">
-          <div class="col-6">  
-            <div class="md-form" style="bottom: 50%">
-              <label for="Class">Class</label> 
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="form-group">
-              <div class="col-8" style="left: 20%">
-                <select id="company" name="class" class="form-control">
-                  <option>SE</option>
-                  <option>TE</option>
-                  <option>BE</option>
-                </select> 
+          <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 ">
+              <div class="md-form mt-5">
+                <input type="text" name="first" class="form-control">
+                <label for="name">Name</label> 
               </div>
             </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <div class="md-form mt-lg-5 mt-1">
+                <input type="text" name="branch" class="form-control">
+                <label for="branch">Branch</label> 
+              </div>
+            </div>
+          </div>  
+          <div class="md-form mt-0">
+            <input type="email" id="email" class="form-control" name="email" autocomplete="off" required/>
+            <label for="email">Email</label>           
           </div>
-        </div> 
-        <div style="text-align: center;">
-          <button class="btn btn-primary btn-circle"
-          style=" word-wrap:break-word;">Notify</button>
+          <div class="md-form mt-0">
+            <input type="text" id="seat" class="form-control" name="seatno" autocomplete="off" required/>
+            <label for="seat">Seat Number </label>           
+          </div>
+
+          <div class="row">
+            <div class="col-6">  
+              <div class="md-form" style="bottom: 50%">
+                <label for="Class">Class</label> 
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <div class="col-8" style="left: 20%">
+                  <select id="company" name="class" class="form-control">
+                    <option>SE</option>
+                    <option>TE</option>
+                    <option>BE</option>
+                  </select> 
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div style="text-align: center;">
+            <button class="btn btn-primary btn-circle"
+            style=" word-wrap:break-word;">Notify</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-1">
+    </div>
+    
+    <div class="card col-lg-4 col-md-8 col-sm-10 mt-5 pt-5 pb-5 pl-5 pr-5" style="height: 450px; margin: auto auto;">
+      <h2 style="text-align: center;">QuicK Result Search</h2>
+      <form action="postSearch.php">
+      <div class="md-form mt-lg-5 mt-1">
+        <input type="text" name="seatnosearch" class="form-control">
+        <label for="seatno">seatno</label> 
+      </div>
+      <div class="form-group">
+        <div class="col-8" style="left: 20%">
+          <select id="company" name="class" class="form-control">
+            <option>SE</option>
+            <option>TE</option>
+            <option>BE</option>
+          </select> 
         </div>
-      </form>
+      </div>
+      <div style="text-align: center;">
+            <button class="btn btn-primary btn-circle"
+            style=" word-wrap:break-word;">Search</button>
+          </div>
+</form>
+    </div>
+
+    <h3 class="mt-5" style="text-align: center;">Statistics</h3>
+    <div class="row">
+      <div class="col-lg-6 col-md-10 col-sm-12 mb-5 bg-light" style="text-align: center;height: auto">
+
+      </div>
+      <div class="col-lg-6 col-md-10 col-sm-12 pt-3 pb-3 bg-light" style="height: auto;">
+        <p>SE</p>
+        <div class="container">
+          <div class="skills css">80%</div>
+        </div>
+
+        <p>TE</p>
+        <div class="container">
+          <div class="skills js">65%</div>
+        </div>
+
+        <p>BE</p>
+        <div class="container">
+          <div class="skills php">60%</div>
+        </div>
+      </div>
+
     </div>
   </div>
-  <h3 class="mt-5" style="text-align: center;">Statistics</h3>
-  <div class="row">
-    <div class="col-lg-6 col-md-10 col-sm-12 mb-5 bg-light" style="text-align: center;height: auto">
-
-    </div>
-    <div class="col-lg-6 col-md-10 col-sm-12 pt-3 pb-3 bg-light" style="height: auto;">
-      <p>SE</p>
-      <div class="container">
-        <div class="skills css">80%</div>
-      </div>
-
-      <p>TE</p>
-      <div class="container">
-        <div class="skills js">65%</div>
-      </div>
-
-      <p>BE</p>
-      <div class="container">
-        <div class="skills php">60%</div>
-      </div>
-    </div>
-
-  </div>
-</div>
-<!-- SCRIPTS -->
-<!-- JQuery -->
-<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
 </body>
 
 </html>
